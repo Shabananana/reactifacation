@@ -1,0 +1,32 @@
+{
+  "name": "reactification",
+  "version": "1.0.0",
+  "description": "test to see the differences between browserify and webpack for further use",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shabananana/reactifacation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shabananana/reactifacation/issues"
+  },
+  "homepage": "https://github.com/Shabananana/reactifacation",
+  "dependencies": {
+    "immutable": "^3.7.2",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "babel-core": "^5.4.2",
+    "babel-loader": "^5.1.0",
+    "babelify": "^6.1.1",
+    "browserify": "^10.2.0",
+    "node-libs-browser": "^0.5.0",
+    "uglify-js": "^2.4.21",
+    "webpack": "^1.9.6"
+  }
+}
