@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react/addons';
-import EntryGraphic from './EntryGraphic';
+import EntryGraphic from '../EntryGraphic';
 
 var {
     Component,

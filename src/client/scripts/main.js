@@ -1,5 +1,5 @@
 import Immutable from 'immutable';
-import HomeContainer from '../../app/components/HomeContainer';
+import HomeContainer from '../../app/components/home/HomeContainer';
 import React from 'react/addons';
 
 var players = [];
