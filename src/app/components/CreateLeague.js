@@ -2,7 +2,10 @@
 
 import React from 'react/addons';
 
-var { Component } = React;
+var {
+    Component,
+    PropTypes
+} = React;
 
 class CreateLeague extends Component {
     constructor(props) {
@@ -16,5 +19,9 @@ class CreateLeague extends Component {
         );
     }
 }
+
+CreateLeague.propTypes = {
+
+};
 
 export default CreateLeague;

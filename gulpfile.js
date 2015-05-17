@@ -18,7 +18,7 @@ gulp.task('watch', function(){
 
 gulp.task('modules', function() {
     return browserify({
-        entries: './src/client/scripts/browserify-main.js',
+        entries: './src/client/scripts/main.js',
         debug: true
     })
     .transform(babelify)
@@ -29,7 +29,7 @@ gulp.task('modules', function() {
 
 gulp.task('minify', function() {
     return browserify({
-        entries: './src/client/scripts/browserify-main.js'
+        entries: './src/client/scripts/main.js'
     })
     .transform(babelify)
     .bundle()

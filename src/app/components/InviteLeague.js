@@ -2,7 +2,10 @@
 
 import React from 'react/addons';
 
-var { Component } = React;
+var {
+    Component,
+    PropTypes
+} = React;
 
 class InviteLeague extends Component {
     constructor(props) {
@@ -16,5 +19,13 @@ class InviteLeague extends Component {
         );
     }
 }
+
+InviteLeague.propTypes = {
+    leagueId: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    sport: PropTypes.number.isRequired,
+    leagueSource: PropTypes.string.isRequired,
+    inviterName: PropTypes.string.isRequired
+};
 
 export default InviteLeague;

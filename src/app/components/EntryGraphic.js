@@ -2,7 +2,10 @@
 
 import React from 'react/addons';
 
-var { Component } = React;
+var {
+    Component,
+    PropTypes
+} = React;
 
 class EntryGraphic extends Component {
     constructor(props) {
@@ -15,4 +18,9 @@ class EntryGraphic extends Component {
     }
 }
 
-module.exports = EntryGraphic;
+EntryGraphic.propTypes = {
+    leagueDues: PropTypes.number.isRequired,
+    players: PropTypes.array
+};
+
+export default EntryGraphic;

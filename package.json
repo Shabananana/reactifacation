@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "webpack": "webpack --config config/webpack.config.js --devtool source-map && webpack --config config/webpack.config.min.js",
+    "webpack": "webpack --config config/webpack.config.min.js && webpack --config config/webpack.config.js --devtool source-map",
     "browserify": "browserify src/client/scripts/browserify-main.js -t babelify --outfile dist/bundle.browserify.js"
   },
   "repository": {
