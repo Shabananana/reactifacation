@@ -1,5 +1,6 @@
 'use strict';
 
+import {List} from 'immutable';
 import React from 'react/addons';
 
 var {
@@ -23,7 +24,7 @@ class EntryGraphic extends Component {
 
 EntryGraphic.propTypes = {
     leagueDues: PropTypes.number.isRequired,
-    players: PropTypes.array
+    players: PropTypes.instanceOf(List)
 };
 
 export default EntryGraphic;

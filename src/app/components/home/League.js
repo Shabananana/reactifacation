@@ -1,5 +1,6 @@
 'use strict';
 
+import {List} from 'immutable';
 import React from 'react/addons';
 import EntryGraphic from '../EntryGraphic';
 
@@ -33,7 +34,7 @@ League.propTypes = {
     name: PropTypes.string.isRequired,
     sport: PropTypes.number.isRequired,
     leagueSource: PropTypes.string.isRequired,
-    players: PropTypes.array.isRequired,
+    players: PropTypes.instanceOf(List).isRequired,
     deadline: PropTypes.instanceOf(Date),
     isCommissioner: PropTypes.bool.isRequired
 };

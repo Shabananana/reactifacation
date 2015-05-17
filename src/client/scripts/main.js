@@ -108,6 +108,6 @@ var leagues = [
     }
 ]
 
-var homeContainerElement = <HomeContainer leagues={leagues} />;
+var homeContainerElement = <HomeContainer leagues={Immutable.fromJS(leagues)} />;
 
 React.render(homeContainerElement, document.getElementById('react-container'));

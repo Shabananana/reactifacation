@@ -1,6 +1,6 @@
 'use strict';
 
-import { Map } from 'immutable';
+import { Map, List } from 'immutable';
 import React from 'react/addons';
 import InviteLeague from './InviteLeague';
 import CreateLeague from './CreateLeague';
@@ -15,7 +15,8 @@ class HomeContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            leagues: props.leagues
+            leagues: props.leagues,
+            displayAll: false
         };
     }
     shouldComponentUpdate () {
@@ -27,35 +28,35 @@ class HomeContainer extends Component {
         var leagueComponents = this.state.leagues.map(
             league => league.isInvitation ?
                 <InviteLeague
-                    key={league.leagueId}
-                    leagueId={league.leagueId}
-                    name={league.name}
-                    sport={league.sport}
-                    inviterName={league.inviterName}
-                    leagueSource={league.leagueSource} /> :
+                    key={league.get('leagueId')}
+                    leagueId={league.get('leagueId')}
+                    name={league.get('name')}
+                    sport={league.get('sport')}
+                    inviterName={league.get('inviterName')}
+                    leagueSource={league.get('leagueSource')} /> :
                 <League
-                    key={league.leagueId}
-                    leagueId={league.leagueId}
-                    name={league.name}
-                    sport={league.sport}
-                    leagueSource={league.leagueSource}
-                    isCommissioner={league.isCommissioner}
-                    leagueDues={league.leagueDues}
-                    players={league.players} />
+                    key={league.get('leagueId')}
+                    leagueId={league.get('leagueId')}
+                    name={league.get('name')}
+                    sport={league.get('sport')}
+                    leagueSource={league.get('leagueSource')}
+                    isCommissioner={league.get('isCommissioner')}
+                    leagueDues={league.get('leagueDues')}
+                    players={league.get('players')} />
                 );
         return (
             <div>
                 <h1>container</h1>
                 {createLeague}
                 {leagueComponents.slice(0, (pageSize - 1))}
-                <span>{this.state.leagues.length - pageSize} more</span>
+                <span>{this.state.leagues.size - pageSize} more</span>
             </div>
         );
     }
 }
 
 HomeContainer.propTypes = {
-    leagues: PropTypes.array.isRequired//PropTypes.instanceOf(Map).isRequired
+    leagues: PropTypes.instanceOf(List).isRequired
 };
 
 export default HomeContainer;
