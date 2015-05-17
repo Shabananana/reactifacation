@@ -1,16 +1,13 @@
 'use strict';
 
-import React from 'react';
-import EntryGraphic from '../../lib/components/entryGraphic';
+import React from 'react/addons';
+import EntryGraphic from './EntryGraphic';
 
 var { Component } = React;
 
 class League extends Component {
     constructor(props) {
         super(props);
-    }
-    shouldComponentUpdate () {
-        return React.addons.PureRenderMixin.shouldComponentUpdate.apply(this, arguments);
     }
     render() {
         var entryGraphic = <EntryGraphic />;

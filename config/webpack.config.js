@@ -1,12 +1,13 @@
 var path = require('path');
 
 module.exports = {
-    entry: path.resolve(__dirname, '../src/client/scripts/webpack-main.js'),
+    entry: {
+        'webpack-main': './src/client/scripts/webpack-main'
+    },
     output: {
         path: path.resolve(__dirname, '../dist'),
-        filename: 'bundle.js'
+        filename: '[name].webpack.js'
     },
-
     module: {
         loaders: [{
             test: /src\/.+.js$/,

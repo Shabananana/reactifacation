@@ -1,18 +1,15 @@
 'use strict';
 
-import React from 'react';
-import InviteLeague from 'inviteLeague';
-import CreateLeague from 'createLeague';
-import League from 'league';
+import React from 'react/addons';
+import InviteLeague from './InviteLeague';
+import CreateLeague from './CreateLeague';
+import League from './League';
 
 var { Component } = React;
 
 class HomeContainer extends Component {
     constructor(props) {
         super(props);
-    }
-    shouldComponentUpdate () {
-        return React.addons.PureRenderMixin.shouldComponentUpdate.apply(this, arguments);
     }
     render() {
         var league = <League />;

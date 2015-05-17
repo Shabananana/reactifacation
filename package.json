@@ -4,7 +4,9 @@
   "description": "test to see the differences between browserify and webpack for further use",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "webpack": "webpack --config config/webpack.config.js --devtool source-map && webpack --config config/webpack.config.min.js",
+    "browserify": "browserify src/client/scripts/browserify-main.js -t babelify --outfile dist/bundle.browserify.js"
   },
   "repository": {
     "type": "git",
@@ -25,9 +27,14 @@
     "babel-loader": "^5.1.0",
     "babelify": "^6.1.1",
     "browserify": "^10.2.0",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "gulp-uglify": "^1.2.0",
     "jest-cli": "^0.4.3",
     "node-libs-browser": "^0.5.0",
     "uglify-js": "^2.4.21",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
     "webpack": "^1.9.6"
   }
 }

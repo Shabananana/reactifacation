@@ -1,5 +1,6 @@
-import HomeContainer from '../../app/views/home/';
+import HomeContainer from '../../app/components/homeContainer';
+import React from 'react/addons';
 
-var homeContainer = new HomeContainer();
+var homeContainerElement = React.createElement(HomeContainer);
 
-homeContainer.renderToDOM(document.getElementById('react-container'));
+React.render(homeContainerElement, document.getElementById('react-container'));
