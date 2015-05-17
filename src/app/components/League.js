@@ -12,11 +12,16 @@ class League extends Component {
     constructor(props) {
         super(props);
     }
+    shouldComponentUpdate () {
+        return React.addons.PureRenderMixin.shouldComponentUpdate.apply(this, arguments);
+    }
     render() {
-        var entryGraphic = <EntryGraphic />;
+        var entryGraphic = <EntryGraphic leagueDues={this.props.leagueDues} players={this.props.players} />;
         return (
             <div>
-                <p>league</p>
+                <h3>League</h3>
+                <p>Name: {this.props.name}</p>
+                <p>SportId: {this.props.sport}</p>
                 {entryGraphic}
             </div>
         );
@@ -30,7 +35,7 @@ League.propTypes = {
     leagueSource: PropTypes.string.isRequired,
     players: PropTypes.array.isRequired,
     deadline: PropTypes.instanceOf(Date),
-    isCommisioner: PropTypes.bool.isRequired
+    isCommissioner: PropTypes.bool.isRequired
 };
 
 export default League;

@@ -15,20 +15,40 @@ class HomeContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pageSize: 6,
             leagues: props.leagues
         };
     }
+    shouldComponentUpdate () {
+        return React.addons.PureRenderMixin.shouldComponentUpdate.apply(this, arguments);
+    }
     render() {
+        var pageSize = 6;
         var createLeague = <CreateLeague />;
         var leagueComponents = this.state.leagues.map(
-            league => league.isInvitation ? <InviteLeague /> : <League />);
+            league => league.isInvitation ?
+                <InviteLeague
+                    key={league.leagueId}
+                    leagueId={league.leagueId}
+                    name={league.name}
+                    sport={league.sport}
+                    inviterName={league.inviterName}
+                    leagueSource={league.leagueSource} /> :
+                <League
+                    key={league.leagueId}
+                    leagueId={league.leagueId}
+                    name={league.name}
+                    sport={league.sport}
+                    leagueSource={league.leagueSource}
+                    isCommissioner={league.isCommissioner}
+                    leagueDues={league.leagueDues}
+                    players={league.players} />
+                );
         return (
             <div>
                 <h1>container</h1>
                 {createLeague}
-                {leagueComponents}
-                <span>{this.state.leagues.length - this.state.pageSize} more</span>
+                {leagueComponents.slice(0, (pageSize - 1))}
+                <span>{this.state.leagues.length - pageSize} more</span>
             </div>
         );
     }

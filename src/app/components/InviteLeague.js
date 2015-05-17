@@ -11,10 +11,15 @@ class InviteLeague extends Component {
     constructor(props) {
         super(props);
     }
+    shouldComponentUpdate () {
+        return React.addons.PureRenderMixin.shouldComponentUpdate.apply(this, arguments);
+    }
     render() {
         return (
             <div>
-                <p>invite leage</p>
+                <h3>Invite League</h3>
+                <p>Name: {this.props.name}</p>
+                <p>SportId: {this.props.sport}</p>
             </div>
         );
     }
