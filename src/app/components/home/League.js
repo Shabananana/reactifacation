@@ -13,7 +13,7 @@ class League extends Component {
     constructor(props) {
         super(props);
     }
-    shouldComponentUpdate () {
+    shouldComponentUpdate() {
         return React.addons.PureRenderMixin.shouldComponentUpdate.apply(this, arguments);
     }
     render() {

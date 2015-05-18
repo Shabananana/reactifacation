@@ -36,5 +36,15 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "webpack": "^1.9.6"
+},
+"jest": {
+    "scriptPreprocessor": "./tools/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "react"
+    ],
+    "testPathDirs": [
+      "./src/app/components/home",
+      "./src/client/scripts"
+    ]
   }
 }

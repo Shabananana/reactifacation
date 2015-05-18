@@ -19,14 +19,14 @@ class HomeContainer extends Component {
             displayAll: false
         };
     }
-    shouldComponentUpdate () {
+    shouldComponentUpdate() {
         return React.addons.PureRenderMixin.shouldComponentUpdate.apply(this, arguments);
     }
     render() {
         var pageSize = 6;
         var createLeague = <CreateLeague />;
         var leagueComponents = this.state.leagues.map(
-            league => league.isInvitation ?
+            league => league.get('isInvitation') ?
                 <InviteLeague
                     key={league.get('leagueId')}
                     leagueId={league.get('leagueId')}
